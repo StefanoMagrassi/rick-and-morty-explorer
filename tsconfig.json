@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "removeComments": false,
+    "noEmit": true,
+    "target": "ES2015",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "lib": ["es6", "dom"],
+    "importHelpers": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "jsx": "preserve",
+    "alwaysStrict": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "jest"]
+  },
+  "include": ["./src", "./jest.config.ts"]
+}
