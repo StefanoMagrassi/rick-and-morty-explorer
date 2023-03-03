@@ -16,6 +16,7 @@
     "start": "parcel src/index.html"
   },
   "dependencies": {
+    "@adobe/react-spectrum": "3.25.1",
     "@contactlab/appy": "5.1.0",
     "fp-ts": "2.13.1",
     "io-ts": "2.2.20",
