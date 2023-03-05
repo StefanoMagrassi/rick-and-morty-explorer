@@ -9,7 +9,7 @@ const Info = D.struct({
   prev: D.nullable(D.string)
 });
 
-interface Paginated<A> {
+export interface Paginated<A> {
   info: Info;
   results: A[];
 }

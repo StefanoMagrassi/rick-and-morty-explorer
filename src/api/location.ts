@@ -2,7 +2,7 @@ import * as D from 'io-ts/Decoder';
 import {useEffect} from 'react';
 import {type State, get, useRemote} from './index';
 
-interface Loc extends D.TypeOf<typeof Loc> {}
+export interface Loc extends D.TypeOf<typeof Loc> {}
 const Loc = D.struct({
   id: D.number,
   name: D.string,

@@ -31,7 +31,7 @@ module.exports = {
   overrides: [
     // --- Disable typescript rules for tests files and enables testing-library only for them
     {
-      files: ['*.spec.ts*', '**/__testing/**/*.ts'],
+      files: ['*.spec.ts*', '_setup.ts'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off'

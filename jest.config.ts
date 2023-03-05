@@ -15,7 +15,7 @@ const config: Config = {
   roots: ['<rootDir>/src/'],
   setupFilesAfterEnv: ['<rootDir>/src/test/_setup.ts'],
   testEnvironment: 'jsdom',
-  testRegex: '(\\.|/)(test|spec)\\.[jt]sx$'
+  testRegex: '(\\.|/)(test|spec)\\.[jt]sx?$'
 };
 
 export default config;
