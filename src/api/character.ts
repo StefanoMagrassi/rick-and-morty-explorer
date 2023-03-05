@@ -1,7 +1,12 @@
+import * as Arr from 'fp-ts/Array';
+import * as S from 'fp-ts/string';
 import * as D from 'io-ts/Decoder';
 import {useEffect} from 'react';
+import {useCustomCompareEffect} from 'react-use';
 import {type State, get, useRemote, parallel} from './index';
 import {paginated} from './paginated';
+
+const arrS = Arr.getEq(S.Eq);
 
 export interface NameAndUrl extends D.TypeOf<typeof NameAndUrl> {}
 const NameAndUrl = D.struct({
@@ -40,9 +45,10 @@ export const usePaginatedCharacters = (url: string): State<Characters> => {
 export const useCharacters = (urls: string[]): State<readonly Character[]> => {
   const [state, run] = useRemote<readonly Character[]>(); // `readonly` due to `sequenceArray`
 
-  useEffect(
+  useCustomCompareEffect(
     () => run(cancel => parallel(getCharacter(cancel))(urls)),
-    [run, urls]
+    [run, urls] as const,
+    (prev, next) => arrS.equals(prev[1], next[1])
   );
 
   return state;
