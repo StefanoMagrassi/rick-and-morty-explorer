@@ -2,8 +2,8 @@ import {render, screen} from '@testing-library/react';
 import fetchMock from 'fetch-mock';
 import * as Arr from 'fp-ts/ReadonlyArray';
 import type {FC} from 'react';
+import {EPISODES} from '../../test/_data';
 import {useEpisodes} from '../episode';
-import {EPISODES} from './_data';
 
 afterEach(() => {
   fetchMock.reset();

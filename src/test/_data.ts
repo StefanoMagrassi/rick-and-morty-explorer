@@ -1,7 +1,8 @@
-import type {Character} from '../character';
-import type {Episode} from '../episode';
-import {Loc} from '../location';
-import type {Paginated} from '../paginated';
+import {Err} from '@contactlab/appy';
+import type {Character} from '../api/character';
+import type {Episode} from '../api/episode';
+import {Loc} from '../api/location';
+import type {Paginated} from '../api/paginated';
 
 export const CHARACTERS: Character[] = [
   {
@@ -53,3 +54,11 @@ export const LOCATION: Loc = {
   residents: ['https://rickandmortyapi.com/api/character/1'],
   type: 'Planet'
 };
+
+export const ERROR = new TypeError('network error');
+
+export const ERR = (path: string): Err => ({
+  type: 'RequestError',
+  error: ERROR,
+  input: [`https://rickandmortyapi.com/api/${path}`, {}]
+});

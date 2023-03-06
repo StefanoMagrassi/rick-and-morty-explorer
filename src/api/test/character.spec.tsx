@@ -2,8 +2,8 @@ import {render, screen} from '@testing-library/react';
 import fetchMock from 'fetch-mock';
 import * as Arr from 'fp-ts/ReadonlyArray';
 import type {FC} from 'react';
+import {CHARACTERS, PAGINATED} from '../../test/_data';
 import {useCharacters, usePaginatedCharacters} from '../character';
-import {CHARACTERS, PAGINATED} from './_data';
 
 afterEach(() => {
   fetchMock.reset();

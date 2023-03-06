@@ -1,8 +1,8 @@
 import {render, screen} from '@testing-library/react';
 import fetchMock from 'fetch-mock';
 import type {FC} from 'react';
+import {LOCATION} from '../../test/_data';
 import {useLocation} from '../location';
-import {LOCATION} from './_data';
 
 afterEach(() => {
   fetchMock.reset();
