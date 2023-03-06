@@ -3,6 +3,7 @@ import fetchMock from 'fetch-mock';
 import {isLeft, right} from 'fp-ts/Either';
 import * as D from 'io-ts/Decoder';
 import {useEffect, type FC} from 'react';
+import {ERROR} from '../../test/_data';
 import {get, parallel, useRemote} from '../index';
 
 afterEach(() => {
@@ -69,9 +70,7 @@ test('useRemote() should run request and track state - OK', async () => {
 });
 
 test('useRemote() should run request and track state - KO', async () => {
-  fetchMock.mock('http://localhost/api/test', {
-    throws: new TypeError('network error')
-  });
+  fetchMock.mock('http://localhost/api/test', {throws: ERROR});
 
   render(<Tester />);
 

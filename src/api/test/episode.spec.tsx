@@ -2,7 +2,7 @@ import {render, screen} from '@testing-library/react';
 import fetchMock from 'fetch-mock';
 import * as Arr from 'fp-ts/ReadonlyArray';
 import type {FC} from 'react';
-import {EPISODES} from '../../test/_data';
+import {EPISODES, ERROR} from '../../test/_data';
 import {useEpisodes} from '../episode';
 
 afterEach(() => {
@@ -26,9 +26,7 @@ test('useEpisodes() should fetch episodes from provided urls list', async () => 
 test('useEpisodes() should fail if at least one request fails', async () => {
   fetchMock
     .mock('https://rickandmortyapi.com/api/episode/1', EPISODES[0])
-    .mock('https://rickandmortyapi.com/api/episode/2', {
-      throws: new TypeError('network error')
-    });
+    .mock('https://rickandmortyapi.com/api/episode/2', {throws: ERROR});
 
   render(<Tester />);
 
