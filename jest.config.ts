@@ -12,6 +12,9 @@ const config: Config = {
   ],
   coverageReporters: ['text'],
   maxWorkers: '50%',
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy'
+  },
   roots: ['<rootDir>/src/'],
   setupFilesAfterEnv: ['<rootDir>/src/test/_setup.ts'],
   testEnvironment: 'jsdom',

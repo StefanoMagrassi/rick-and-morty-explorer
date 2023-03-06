@@ -8,7 +8,7 @@ interface AppErrorProps {
 
 export const AppError: FC<AppErrorProps> = ({error}) => (
   <IllustratedMessage>
-    <ErrorIcon />
+    <ErrorIcon aria-label="Error icon" />
     <Heading>{error.message}</Heading>
   </IllustratedMessage>
 );

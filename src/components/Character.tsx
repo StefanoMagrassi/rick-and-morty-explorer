@@ -4,7 +4,7 @@ import type {Character as CharacterSchema} from '../api/character';
 import {Episodes} from './Episodes';
 import {Location} from './Location';
 
-const ND = 'N/D';
+const ND = 'unknown';
 
 interface CharacterProp {
   data: CharacterSchema;
@@ -40,7 +40,7 @@ export const Character: FC<CharacterProp> = ({data}) => (
           </li>
 
           <li>
-            <strong>Gender:</strong> {data.gender || ND}
+            <strong>Gender:</strong> {data.gender}
           </li>
         </ul>
       </Flex>
